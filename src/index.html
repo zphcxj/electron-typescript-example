@@ -1,3 +1,11 @@
+<!--
+ * @FileName: 
+ * @Description: 
+ * @Author: zhoup
+ * @Date: 2020-06-09 23:36:46
+ * @LastEditors: zhoup
+ * @LastEditTime: 2020-06-10 14:16:58
+--> 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,32 +21,33 @@
 <small>Refresh and you'll see a new post added.</small>
 
 <script>
-    var typeorm = require("typeorm");
-    typeorm.createConnection().then(() => {
-        var post = {
-            title: "post title",
-            text: "post text"
+    // require("reflect-metadata");
+    // var typeorm = require("typeorm");
+    // typeorm.createConnection().then(() => {
+    //     var post = {
+    //         title: "post title",
+    //         text: "post text"
 
-        };
-        return typeorm.getRepository("Post").save(post);
+    //     };
+    //     return typeorm.getRepository("Post").save(post);
 
-    }).then(() => {
-        console.log("Saved successfully!");
-        return typeorm.getRepository("Post").find();
+    // }).then(() => {
+    //     console.log("Saved successfully!");
+    //     return typeorm.getRepository("Post").find();
 
-    }).then(posts => {
-        console.log("Posts: ", posts);
+    // }).then(posts => {
+    //     console.log("Posts: ", posts);
 
-        let ul = document.getElementById("postList");
-        posts.forEach(post => {
-            var li = document.createElement('li');
-            li.innerText = post.id + ". " + post.title;
-            ul.appendChild(li);
-        });
+    //     let ul = document.getElementById("postList");
+    //     posts.forEach(post => {
+    //         var li = document.createElement('li');
+    //         li.innerText = post.id + ". " + post.title;
+    //         ul.appendChild(li);
+    //     });
 
-    }).catch(error => {
-        console.error("Error: ", error);
-    });
+    // }).catch(error => {
+    //     console.error("Error: ", error);
+    // });
 </script>
 
 </body>
